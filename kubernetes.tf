@@ -20,11 +20,13 @@ resource "kubernetes_deployment" "flask" {
 
   spec {
     replicas = 2
+
     selector {
       match_labels = {
         App = "FlaskAppExample"
       }
     }
+
     template {
       metadata {
         labels = {
@@ -66,7 +68,7 @@ resource "kubernetes_service" "flask" {
       App = kubernetes_deployment.flask.spec.0.template.0.metadata[0].labels.App
     }
     port {
-      node_port   = 30201
+      node_port   = 30202
       port        = 80
       target_port = 80
     }
