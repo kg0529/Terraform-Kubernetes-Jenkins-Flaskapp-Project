@@ -68,9 +68,9 @@ resource "kubernetes_service" "flask" {
       App = kubernetes_deployment.flask.spec.0.template.0.metadata[0].labels.App
     }
     port {
-      node_port   = 30202
-      port        = 80
-      target_port = 80
+      node_port   = 30201
+      port        = 9090
+      target_port = 9090
     }
 
     type = "NodePort"
