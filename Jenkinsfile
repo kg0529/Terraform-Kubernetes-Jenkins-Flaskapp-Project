@@ -11,8 +11,9 @@ pipeline{
 		stage('Deploy'){
 			steps{
 				script {
-                                        sh 'ls'
+                                        sh 'ls -l'
                                         sh 'terraform init'
+                                        sh 'terraform validate'
 					sh 'terraform apply -auto-approve'
 				}
 			}
