@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path = "/home/master/.kube/config"
 }
 
 resource "kubernetes_deployment" "flask" {
